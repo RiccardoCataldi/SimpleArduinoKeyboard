@@ -1,9 +1,9 @@
-int buzzerPin = 8; // Definisci il pin a cui è collegato il buzzer
-int lastMidiNote = -1; // Variabile per tenere traccia dell'ultima nota suonata
+int buzzerPin = 8; 
+int lastMidiNote = -1; a
 
 void setup() {
-  pinMode(buzzerPin, OUTPUT); // Imposta il pin come output
-  Serial.begin(115200); // Inizia la comunicazione seriale a 9600 bps
+  pinMode(buzzerPin, OUTPUT); 
+  Serial.begin(115200); 
 }
 
 void loop() {
@@ -12,11 +12,11 @@ void loop() {
     String serialMessage = Serial.readStringUntil('\n');
     
     if (serialMessage.startsWith("note_off")) {
-      // Interrompi il suono quando ricevi un messaggio "note_off"
+      
       noTone(buzzerPin);
       lastMidiNote = -1;
     } else {
-      // Analizza il messaggio MIDI e suona la nota corrispondente
+      
       int midiNote = serialMessage.toInt();
       if (midiNote >= 0 && midiNote <= 127) {
         // Suona la nota per un breve periodo
