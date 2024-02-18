@@ -1,5 +1,5 @@
 int buzzerPin = 8; 
-int lastMidiNote = -1; a
+int lastMidiNote = -1; 
 
 void setup() {
   pinMode(buzzerPin, OUTPUT); 
